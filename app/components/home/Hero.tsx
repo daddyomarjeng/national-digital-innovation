@@ -2,7 +2,7 @@ import Button from '../ui/Button';
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
+    <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -43,9 +43,9 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 href="/registration"
-                variant="primary"
+                variant="ghost"
                 size="lg"
-                className="w-full sm:w-auto bg-white text-blue-900 hover:bg-blue-50"
+                className="w-full sm:w-auto bg-white text-blue-900 hover:bg-blue-50 font-semibold"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -54,9 +54,9 @@ export default function Hero() {
               </Button>
               <Button
                 href="/programme"
-                variant="outline"
+                variant="ghost"
                 size="lg"
-                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10"
+                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
