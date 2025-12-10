@@ -4,7 +4,7 @@
 
 // Event Dates
 export const EVENT_DATES = {
-  start: '8 December 2025',
+  start: '20 December 2025',
   end: '12 December 2025',
   display: '8–12 December 2025',
   fullDisplay: 'December 8-12, 2025',

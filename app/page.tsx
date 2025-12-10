@@ -1,9 +1,10 @@
 import Hero from './components/home/Hero';
+import CountdownTimer from './components/home/CountdownTimer';
 import Section from './components/ui/Section';
 import SectionTitle from './components/ui/SectionTitle';
 import Card, { CardBody } from './components/ui/Card';
 import Button from './components/ui/Button';
-import { EXPECTATIONS, FOCUS_AREAS, PARTNERS } from './constants';
+import { EXPECTATIONS, FOCUS_AREAS, PARTNERS, EVENT_DATES } from './constants';
 
 export default function HomePage() {
   const updates = [
@@ -38,6 +39,13 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+
+      {/* Countdown Timer */}
+      <Section bgColor="gray">
+        <div className="max-w-4xl mx-auto">
+          <CountdownTimer targetDate={EVENT_DATES.start} />
+        </div>
+      </Section>
 
       {/* About the Week */}
       <Section bgColor="white">
