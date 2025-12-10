@@ -3,64 +3,9 @@ import Section from './components/ui/Section';
 import SectionTitle from './components/ui/SectionTitle';
 import Card, { CardBody } from './components/ui/Card';
 import Button from './components/ui/Button';
+import { EXPECTATIONS, FOCUS_AREAS, PARTNERS } from './constants';
 
 export default function HomePage() {
-  const expectations = [
-    {
-      icon: '🎤',
-      title: 'Keynote Speeches',
-      description: 'Inspiring talks from industry leaders and government officials on digital innovation.',
-    },
-    {
-      icon: '💬',
-      title: 'Panel Discussions',
-      description: 'Expert panels addressing key challenges and opportunities in digital transformation.',
-    },
-    {
-      icon: '🚀',
-      title: 'Innovation Expo',
-      description: 'Showcase of cutting-edge technologies and solutions from local and international innovators.',
-    },
-    {
-      icon: '🎓',
-      title: 'Workshops',
-      description: 'Hands-on training sessions on emerging technologies and digital skills.',
-    },
-    {
-      icon: '🤝',
-      title: 'Networking',
-      description: 'Connect with entrepreneurs, investors, policymakers, and tech enthusiasts.',
-    },
-  ];
-
-  const focusAreas = [
-    {
-      title: 'Digital Infrastructure',
-      description: 'Expanding broadband connectivity and strengthening ICT infrastructure nationwide.',
-      color: 'bg-blue-50 border-blue-200',
-    },
-    {
-      title: 'E-Government',
-      description: 'Digitizing public services for efficient and transparent governance.',
-      color: 'bg-indigo-50 border-indigo-200',
-    },
-    {
-      title: 'Fintech & Digital Payments',
-      description: 'Promoting financial inclusion through digital payment solutions.',
-      color: 'bg-purple-50 border-purple-200',
-    },
-    {
-      title: 'Startups & Innovation',
-      description: 'Supporting the local tech ecosystem and entrepreneurship development.',
-      color: 'bg-cyan-50 border-cyan-200',
-    },
-    {
-      title: 'Digital Skills & Jobs',
-      description: 'Building capacity and creating opportunities in the digital economy.',
-      color: 'bg-teal-50 border-teal-200',
-    },
-  ];
-
   const updates = [
     {
       date: 'December 5, 2025',
@@ -88,14 +33,7 @@ export default function HomePage() {
     },
   ];
 
-  const partners = [
-    'Ministry of Communication and Digital Economy',
-    'WARDIP Gambia',
-    'The World Bank',
-    'African Development Bank',
-    'ECOWAS Commission',
-    'ITU',
-  ];
+  const partners = PARTNERS;
 
   return (
     <>
@@ -132,7 +70,7 @@ export default function HomePage() {
           What to Expect
         </SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {expectations.map((item, idx) => (
+          {EXPECTATIONS.map((item, idx) => (
             <Card key={idx}>
               <CardBody className="text-center">
                 <div className="text-5xl mb-4">{item.icon}</div>
@@ -150,7 +88,7 @@ export default function HomePage() {
           Focus Areas
         </SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {focusAreas.map((area, idx) => (
+          {FOCUS_AREAS.map((area, idx) => (
             <div
               key={idx}
               className={`${area.color} border-2 rounded-xl p-6 hover:shadow-lg transition-shadow`}

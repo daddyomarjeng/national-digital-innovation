@@ -6,6 +6,7 @@ import Section from '../components/ui/Section';
 import SectionTitle from '../components/ui/SectionTitle';
 import Card, { CardBody } from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { CONTACT_INFO, SOCIAL_MEDIA } from '../constants';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -44,8 +45,8 @@ export default function ContactPage() {
         </svg>
       ),
       title: 'Email',
-      details: ['info@mocde.gov.gm', 'events@mocde.gov.gm'],
-      links: ['mailto:info@mocde.gov.gm', 'mailto:events@mocde.gov.gm'],
+      details: [CONTACT_INFO.general.email, CONTACT_INFO.departments.registration],
+      links: [`mailto:${CONTACT_INFO.general.email}`, `mailto:${CONTACT_INFO.departments.registration}`],
     },
     {
       icon: (
@@ -54,8 +55,8 @@ export default function ContactPage() {
         </svg>
       ),
       title: 'Phone',
-      details: ['+220 432 1234', '+220 432 5678'],
-      links: ['tel:+2204321234', 'tel:+2204325678'],
+      details: [CONTACT_INFO.general.phone, CONTACT_INFO.general.alternatePhone],
+      links: [`tel:${CONTACT_INFO.general.phone.replace(/\s/g, '')}`, `tel:${CONTACT_INFO.general.alternatePhone.replace(/\s/g, '')}`],
     },
     {
       icon: (
@@ -65,7 +66,7 @@ export default function ContactPage() {
         </svg>
       ),
       title: 'Address',
-      details: ['Ministry of Communication and Digital Economy', 'GRTS Road, Kanifing', 'Banjul, The Gambia'],
+      details: [CONTACT_INFO.address.line1, CONTACT_INFO.address.line2, CONTACT_INFO.address.line3],
       links: [],
     },
     {
@@ -75,7 +76,7 @@ export default function ContactPage() {
         </svg>
       ),
       title: 'Office Hours',
-      details: ['Monday - Friday: 9:00 AM - 5:00 PM', 'Saturday - Sunday: Closed'],
+      details: [CONTACT_INFO.officeHours.weekdays, CONTACT_INFO.officeHours.weekend],
       links: [],
     },
   ];

@@ -1,4 +1,5 @@
 import Button from '../ui/Button';
+import { EVENT_DATES, EVENT_THEME, VENUE, EVENT_STATS } from '@/app/constants';
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
             {/* Event Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-blue-700/50 rounded-full mb-6 backdrop-blur-sm">
               <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-              <span className="text-sm font-medium">December 8-12, 2025</span>
+              <span className="text-sm font-medium">{EVENT_DATES.fullDisplay}</span>
             </div>
 
             {/* Main Title */}
@@ -27,7 +28,7 @@ export default function Hero() {
 
             {/* Theme */}
             <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Accelerating Digital Transformation and Strengthening Connectivity for Inclusive Growth in The Gambia
+              {EVENT_THEME.tagline}
             </p>
 
             {/* Venue */}
@@ -36,7 +37,7 @@ export default function Hero() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span className="text-lg">Sir Dawda Kairaba Jawara International Conference Center</span>
+              <span className="text-lg">{VENUE.name}</span>
             </div>
 
             {/* CTA Buttons */}
@@ -70,10 +71,10 @@ export default function Hero() {
         {/* Stats Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 max-w-4xl mx-auto">
           {[
-            { label: '5 Days', icon: '📅' },
-            { label: '50+ Speakers', icon: '🎤' },
-            { label: '100+ Sessions', icon: '💡' },
-            { label: '1000+ Participants', icon: '👥' },
+            { label: EVENT_STATS.days, icon: '📅' },
+            { label: EVENT_STATS.speakers, icon: '🎤' },
+            { label: EVENT_STATS.sessions, icon: '💡' },
+            { label: EVENT_STATS.participants, icon: '👥' },
           ].map((stat, idx) => (
             <div key={idx} className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-lg">
               <div className="text-3xl mb-2">{stat.icon}</div>

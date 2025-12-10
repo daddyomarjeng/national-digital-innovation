@@ -2,6 +2,7 @@ import Section from '../components/ui/Section';
 import SectionTitle from '../components/ui/SectionTitle';
 import Card, { CardBody } from '../components/ui/Card';
 import type { Metadata } from 'next';
+import { ORGANIZERS } from '../constants';
 
 export const metadata: Metadata = {
   title: 'About | National Digital Innovation Week – The Gambia',
@@ -9,29 +10,12 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const organisers = [
-    {
-      name: 'Ministry of Communication and Digital Economy (MoCDE)',
-      role: 'Lead Organiser',
-      description:
-        'The Ministry of Communication and Digital Economy is responsible for formulating and implementing policies that promote the development and use of ICT in The Gambia. MoCDE leads the national digital transformation agenda.',
-      icon: '🏛️',
-    },
-    {
-      name: 'WARDIP Gambia',
-      role: 'Implementation Partner',
-      description:
-        'The West Africa Regional Digital Integration Project (WARDIP) supports the development of digital infrastructure and services across West Africa, including The Gambia, fostering regional integration and connectivity.',
-      icon: '🌐',
-    },
-    {
-      name: 'The World Bank',
-      role: 'Development Partner',
-      description:
-        'The World Bank provides financial and technical support for digital development initiatives in The Gambia, working to expand broadband access and strengthen the enabling environment for digital transformation.',
-      icon: '🏦',
-    },
-  ];
+  const organisers = ORGANIZERS.map(org => ({
+    name: org.name,
+    role: org.role,
+    description: org.description,
+    icon: org.name.includes('Ministry') ? '🏛️' : org.name.includes('WARDIP') ? '🌐' : '🏦',
+  }));
 
   return (
     <>
