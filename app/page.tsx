@@ -227,17 +227,17 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               href="/registration"
-              variant="primary"
+              variant="ghost"
               size="lg"
-              className="w-full sm:w-auto bg-white text-blue-900 hover:bg-blue-50"
+              className="w-full sm:w-auto bg-white text-blue-900 hover:bg-blue-50 font-semibold"
             >
               Register for Free
             </Button>
             <Button
               href="/about"
-              variant="outline"
+              variant="ghost"
               size="lg"
-              className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10"
+              className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold"
             >
               Learn More
             </Button>
