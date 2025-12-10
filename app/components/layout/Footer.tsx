@@ -117,17 +117,17 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="mailto:info@mocde.gov.gm" className="hover:text-blue-400 transition-colors">
-                  info@mocde.gov.gm
+                <a href="mailto:info@gicta.gm" className="hover:text-blue-400 transition-colors">
+                  info@gicta.gm
                 </a>
               </li>
               <li>
-                <a href="tel:+2204123456" className="hover:text-blue-400 transition-colors">
-                  +220 412 3456
+                <a href="tel:+2204321234" className="hover:text-blue-400 transition-colors">
+                  +220 432 1234
                 </a>
               </li>
               <li className="text-gray-400">
-                Ministry of Communication<br />and Digital Economy<br />Banjul, The Gambia
+                GICTA<br />Bertil Harding Highway<br />Banjul, The Gambia
               </li>
             </ul>
           </div>
@@ -155,16 +155,19 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-sm text-gray-400 text-center md:text-right">
               <p>
-                © {currentYear} Ministry of Communication and Digital Economy, The Gambia.
+                © {currentYear} Gambia Information and Communication Technology Agency (GICTA)
               </p>
-              <p className="mt-1">
+              <p className="mt-1 text-xs">
+                In partnership with Ministry of Communication and Digital Economy, The Gambia
+              </p>
+              <p className="mt-2">
                 <a 
-                  href="https://www.mocde.gov.gm" 
+                  href="https://gicta.gov.gm" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  Visit Ministry Website →
+                  Visit GICTA Website →
                 </a>
               </p>
             </div>

@@ -40,20 +40,20 @@ export const EVENT_STATS = {
 // Contact Information
 export const CONTACT_INFO = {
   general: {
-    email: 'info@mocde.gov.gm',
+    email: 'info@gicta.gm',
     phone: '+220 432 1234',
     alternatePhone: '+220 432 5678',
   },
   departments: {
-    registration: 'registration@mocde.gov.gm',
-    expo: 'expo@mocde.gov.gm',
-    media: 'media@mocde.gov.gm',
-    speakers: 'speakers@mocde.gov.gm',
-    travel: 'travel@mocde.gov.gm',
+    registration: 'registration@gicta.gm',
+    expo: 'expo@gicta.gm',
+    media: 'media@gicta.gm',
+    speakers: 'speakers@gicta.gm',
+    travel: 'travel@gicta.gm',
   },
   address: {
-    line1: 'Ministry of Communication and Digital Economy',
-    line2: 'GRTS Road, Kanifing',
+    line1: 'Gambia Information and Communication Technology Agency (GICTA)',
+    line2: 'Bertil Harding Highway, Kanifing',
     line3: 'Banjul, The Gambia',
   },
   officeHours: {
@@ -72,6 +72,14 @@ export const SOCIAL_MEDIA = {
 
 // Organizing Partners
 export const ORGANIZERS = [
+  {
+    name: 'Gambia Information and Communication Technology Agency',
+    shortName: 'GICTA',
+    role: 'Main Organizing Body',
+    description: 'GICTA is the principal agency responsible for regulating, promoting, and developing the ICT sector in The Gambia. As the main organizing body, GICTA coordinates all aspects of the National Digital Innovation Week, bringing together stakeholders to accelerate digital transformation.',
+    website: 'https://gicta.gov.gm',
+    isPrimary: true,
+  },
   {
     name: 'Ministry of Communication and Digital Economy',
     shortName: 'MoCDE',
@@ -94,12 +102,14 @@ export const ORGANIZERS = [
 
 // Partner Logos (Placeholder names)
 export const PARTNERS = [
+  'Gambia Information and Communication Technology Agency (GICTA)',
   'Ministry of Communication and Digital Economy',
   'WARDIP Gambia',
   'The World Bank',
   'African Development Bank',
   'ECOWAS Commission',
-  'ITU',
+  'International Telecommunication Union (ITU)',
+  'African Union',
 ];
 
 // Focus Areas

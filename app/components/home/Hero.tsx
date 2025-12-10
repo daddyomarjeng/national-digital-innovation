@@ -32,12 +32,20 @@ export default function Hero() {
             </p>
 
             {/* Venue */}
-            <div className="flex items-center justify-center mb-10 text-blue-100">
+            <div className="flex items-center justify-center mb-4 text-blue-100">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               <span className="text-lg">{VENUE.name}</span>
+            </div>
+
+            {/* Organized by GICTA */}
+            <div className="mb-10">
+              <p className="text-blue-200 text-sm mb-2">Organized by</p>
+              <p className="text-white text-lg font-semibold">
+                Gambia Information and Communication Technology Agency (GICTA)
+              </p>
             </div>
 
             {/* CTA Buttons */}
