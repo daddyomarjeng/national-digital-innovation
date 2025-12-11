@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Hero from './components/home/Hero';
 import CountdownTimer from './components/home/CountdownTimer';
 import Section from './components/ui/Section';
@@ -241,8 +242,15 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               {/* Presidential Image */}
               <div className="shrink-0">
-                <div className="w-48 h-48 md:w-56 md:h-56 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
-                  <span className="text-8xl">🇬🇲</span>
+                <div className="w-48 h-48 md:w-56 md:h-56 bg-white rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/president.jpg"
+                    alt="His Excellency Adama Barrow, President of The Gambia"
+                    width={224}
+                    height={224}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
 
