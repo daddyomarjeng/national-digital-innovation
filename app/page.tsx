@@ -291,90 +291,98 @@ export default function HomePage() {
               name: 'Hon. Ousman A. Bah',
               title: 'Minister',
               organization: 'Ministry of Communication & Digital Economy',
-              photo: '👨‍💼',
+              photo: '/president.jpg',
               tags: ['Keynote', 'Government'],
             },
             {
               name: 'Dr. Amina Ibrahim',
               title: 'Regional Digital Economy Advisor',
               organization: 'ECOWAS Commission',
-              photo: '👩‍💼',
+              photo: '/dg.jpg',
               tags: ['Keynote', 'Regional Expert'],
             },
             {
               name: 'Michael Okonkwo',
               title: 'CEO & Founder',
               organization: 'AfriTech Innovations',
-              photo: '👨‍💻',
+              photo: '/president.jpg',
               tags: ['Panelist', 'Entrepreneur'],
             },
             {
               name: 'Fatou Jallow',
               title: 'Director of Innovation',
               organization: 'WARDIP Gambia',
-              photo: '👩‍💼',
+              photo: '/dg.jpg',
               tags: ['Panelist', 'Moderator'],
             },
             {
               name: 'Prof. David Mensah',
               title: 'Professor of Computer Science',
               organization: 'University of Ghana',
-              photo: '👨‍🏫',
+              photo: '/president.jpg',
               tags: ['Keynote', 'Academia'],
             },
             {
               name: 'Sarah Chen',
               title: 'Regional Director',
               organization: 'The World Bank',
-              photo: '👩‍💼',
+              photo: '/dg.jpg',
               tags: ['Panelist', 'Development Partner'],
             },
             {
               name: 'Baboucarr Njie',
               title: 'CEO',
               organization: 'GAMTEL',
-              photo: '👨‍💼',
+              photo: '/president.jpg',
               tags: ['Panelist', 'Telecom'],
             },
             {
               name: 'Mariama Touray',
               title: 'Founder & CEO',
               organization: 'TechHer Gambia',
-              photo: '👩‍💻',
+              photo: '/dg.jpg',
               tags: ['Panelist', 'Women in Tech'],
             },
             {
               name: 'James Williams',
               title: 'Fintech Innovation Lead',
               organization: 'MasterCard Africa',
-              photo: '👨‍💼',
+              photo: '/president.jpg',
               tags: ['Keynote', 'Fintech'],
             },
             {
               name: 'Aisha Sanneh',
               title: 'Director General',
               organization: 'GPPA',
-              photo: '👩‍💼',
+              photo: '/dg.jpg',
               tags: ['Panelist', 'E-Government'],
             },
             {
               name: 'Daniel Kofi Agyei',
               title: 'Co-Founder',
               organization: 'Ghana Tech Startup Hub',
-              photo: '👨‍💻',
+              photo: '/president.jpg',
               tags: ['Panelist', 'Startup Ecosystem'],
             },
             {
               name: 'Isatou Barry',
               title: 'Cybersecurity Specialist',
               organization: 'Ministry of Communication & Digital Economy',
-              photo: '👩‍💻',
+              photo: '/dg.jpg',
               tags: ['Moderator', 'Cybersecurity'],
             },
           ].map((speaker, idx) => (
             <Card key={idx}>
               <CardBody className="text-center">
-                <div className="text-6xl mb-4">{speaker.photo}</div>
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={speaker.photo}
+                    alt={speaker.name}
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">{speaker.name}</h3>
                 <p className="text-sm text-blue-700 font-semibold mb-1">{speaker.title}</p>
                 <p className="text-xs text-gray-600 mb-3">{speaker.organization}</p>
