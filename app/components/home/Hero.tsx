@@ -44,7 +44,8 @@ export default function Hero() {
             <div className="mb-10">
               <p className="text-blue-200 text-sm mb-2">Organized by</p>
               <p className="text-white text-lg font-semibold">
-                Gambia Information and Communication Technology Agency (GICTA)
+                {/* Gambia Information and Communication Technology Agency (GICTA) */}
+                Ministry of Communications and Digital Economy(MOCDE)
               </p>
             </div>
 

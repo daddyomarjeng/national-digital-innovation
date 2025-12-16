@@ -155,19 +155,19 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-sm text-gray-400 text-center md:text-right">
               <p>
-                © {currentYear} Gambia Information and Communication Technology Agency (GICTA)
+                © {currentYear} Ministry of Communication and Digital Economy(MOCDE), The Gambia
               </p>
               <p className="mt-1 text-xs">
-                In partnership with Ministry of Communication and Digital Economy, The Gambia
+                In partnership with Gambia Information and Communication Technology Agency (GICTA)
               </p>
               <p className="mt-2">
                 <a 
-                  href="https://gicta.gov.gm" 
+                  href="https://mocde.gov.gm" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  Visit GICTA Website →
+                  Visit MOCDE Website →
                 </a>
               </p>
             </div>

@@ -102,8 +102,8 @@ export const ORGANIZERS = [
 
 // Partner Logos (Placeholder names)
 export const PARTNERS = [
-  'Gambia Information and Communication Technology Agency (GICTA)',
   'Ministry of Communication and Digital Economy',
+  'Gambia Information and Communication Technology Agency (GICTA)',
   'WARDIP Gambia',
   'The World Bank',
   'African Development Bank',
