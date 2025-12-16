@@ -453,9 +453,9 @@ export default function ProgrammePage() {
           </p>
           <Button
             href="/registration"
-            variant="primary"
+            variant="ghost"
             size="lg"
-            className="bg-white text-blue-900 hover:bg-blue-50"
+            className='bg-white text-blue-900'
           >
             Register Now
           </Button>

@@ -1,9 +1,91 @@
 import Button from '../ui/Button';
+import Image from 'next/image';
 import { EVENT_DATES, EVENT_THEME, VENUE, EVENT_STATS } from '@/app/constants';
 
 export default function Hero() {
   return (
     <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
+      {/* Floating Logos */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* GICTA Logo - Top Left */}
+        <div className="absolute top-20 left-10 w-24 h-24 md:w-32 md:h-32 opacity-20 animate-float">
+          <div className="w-full h-full bg-white rounded-full p-4 shadow-lg">
+            <Image
+              src="/gicta.jpg"
+              alt="GICTA"
+              width={128}
+              height={128}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* MoCDE Logo - Top Right */}
+        <div className="absolute top-32 right-16 w-20 h-20 md:w-28 md:h-28 opacity-25 animate-float-delayed">
+          <div className="w-full h-full bg-white rounded-full p-3 shadow-lg">
+            <Image
+              src="/mocde.jpg"
+              alt="MoCDE"
+              width={112}
+              height={112}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* WARDIP Logo - Bottom Left */}
+        <div className="absolute bottom-40 left-20 w-20 h-20 md:w-28 md:h-28 opacity-20 animate-float-slow">
+          <div className="w-full h-full bg-white rounded-full p-3 shadow-lg">
+            <Image
+              src="/wardip.jpg"
+              alt="WARDIP"
+              width={112}
+              height={112}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Additional GICTA Logo - Bottom Right */}
+        <div className="absolute bottom-32 right-12 w-24 h-24 md:w-32 md:h-32 opacity-15 animate-float-delayed">
+          <div className="w-full h-full bg-white rounded-full p-4 shadow-lg">
+            <Image
+              src="/gicta.jpg"
+              alt="GICTA"
+              width={128}
+              height={128}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Small MoCDE Logo - Middle Left */}
+        <div className="hidden lg:block absolute top-1/2 left-8 w-16 h-16 opacity-20 animate-float-slow">
+          <div className="w-full h-full bg-white rounded-full p-2 shadow-lg">
+            <Image
+              src="/mocde.jpg"
+              alt="MoCDE"
+              width={64}
+              height={64}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Small WARDIP Logo - Middle Right */}
+        <div className="hidden lg:block absolute top-1/3 right-8 w-16 h-16 opacity-25 animate-float">
+          <div className="w-full h-full bg-white rounded-full p-2 shadow-lg">
+            <Image
+              src="/wardip.jpg"
+              alt="WARDIP"
+              width={64}
+              height={64}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
