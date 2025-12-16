@@ -1,7 +1,26 @@
+import Image from 'next/image';
 import Section from '../ui/Section';
 import SectionTitle from '../ui/SectionTitle';
 import Card, { CardBody } from '../ui/Card';
 import { ORGANIZERS } from '@/app/constants';
+
+// Map organizer names to their logo images
+const getOrganizerImage = (name: string): string => {
+  const imageMap: { [key: string]: string } = {
+    'GICTA': '/gicta.jpg',
+    'Ministry': '/mocde.jpg',
+    'WARDIP': '/wardip.jpg',
+    'World Bank': '/wb.jpg',
+  };
+  
+  for (const [key, value] of Object.entries(imageMap)) {
+    if (name.includes(key)) {
+      return value;
+    }
+  }
+  
+  return '/gicta.jpg'; // fallback
+};
 
 export default function OrganisersGovernance() {
   const organisers = ORGANIZERS.map(org => ({
@@ -9,7 +28,6 @@ export default function OrganisersGovernance() {
     role: org.role,
     description: org.description,
     isPrimary: org.isPrimary || false,
-    icon: org.name.includes('GICTA') ? '🌐' : org.name.includes('Ministry') ? '🏛️' : org.name.includes('WARDIP') ? '🔗' : '🏦',
   }));
 
   return (
@@ -21,13 +39,20 @@ export default function OrganisersGovernance() {
         {organisers.map((org, idx) => (
           <Card key={idx} hover={false} className={org.isPrimary ? 'border-4 border-blue-500 shadow-xl' : ''}>
             <CardBody className="lg:flex lg:items-start lg:gap-6">
-              <div className="flex-shrink-0 mb-4 lg:mb-0">
-                <div className={`w-20 h-20 rounded-xl flex items-center justify-center text-4xl ${
+              <div className="shrink-0 mb-4 lg:mb-0">
+                <div className={`w-20 h-20 rounded-xl flex items-center justify-center overflow-hidden ${
                   org.isPrimary 
-                    ? 'bg-gradient-to-br from-blue-700 to-blue-500 shadow-lg' 
-                    : 'bg-gradient-to-br from-blue-600 to-blue-400'
+                    ? 'bg-white border-4 border-blue-700 shadow-lg' 
+                    : 'bg-white border-2 border-gray-200'
                 }`}>
-                  {org.icon}
+                  <div className="relative w-16 h-16">
+                    <Image
+                      src={getOrganizerImage(org.name)}
+                      alt={`${org.name} logo`}
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="flex-1">
