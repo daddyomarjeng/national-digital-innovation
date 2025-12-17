@@ -105,3 +105,29 @@ html {
   animation: float-slow 10s ease-in-out infinite;
   animation-delay: 2s;
 }
+
+@keyframes aurora {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6%, -4%, 0) scale(1.08);
+  }
+}
+
+@keyframes aurora-delay {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, 6%, 0) scale(1.06);
+  }
+}
+
+.animate-aurora {
+  animation: aurora 12s ease-in-out infinite alternate;
+}
+
+.animate-aurora-delay {
+  animation: aurora-delay 16s ease-in-out infinite alternate;
+}
