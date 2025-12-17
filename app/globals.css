@@ -34,6 +34,26 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+.bg-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.7), transparent 60%);
+  mix-blend-mode: screen;
+}
+
+.hero-aurora {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.6), transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(14, 165, 233, 0.5), transparent 55%);
+  filter: blur(80px);
+  opacity: 0.75;
+  animation: float 14s ease-in-out infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -104,4 +124,14 @@ html {
 .animate-float-slow {
   animation: float-slow 10s ease-in-out infinite;
   animation-delay: 2s;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 20px 60px rgba(14, 165, 233, 0.15);
+  }
+  50% {
+    box-shadow: 0 30px 80px rgba(59, 130, 246, 0.2);
+  }
 }
