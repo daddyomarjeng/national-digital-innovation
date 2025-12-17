@@ -34,8 +34,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group" aria-label="National Digital Innovation Week home">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-800 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-xl">ND</span>
+            <div className="w-12 h-12 bg-linear-to-br from-blue-800 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+              <span className="text-white font-bold text-base">logo</span>
             </div>
             <div className="hidden lg:block">
               <div className="text-sm font-bold text-blue-900">National Digital</div>

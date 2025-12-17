@@ -72,7 +72,7 @@ export default function ExpoPage() {
           <p className="text-xl md:text-2xl text-blue-100 mb-8">
             Showcase Your Innovation. Connect with Stakeholders. Shape The Gambia's Digital Future.
           </p>
-          <Button variant="primary" size="lg" className="bg-white text-blue-900 hover:bg-blue-50">
+          <Button variant="outline" size="lg" className="bg-white text-blue-900 hover:bg-blue-50">
             Apply as Exhibitor
           </Button>
         </div>
