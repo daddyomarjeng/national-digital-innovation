@@ -91,6 +91,21 @@ html {
   }
 }
 
+@keyframes pulse-soft {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+}
+
 /* Apply animations */
 .animate-float {
   animation: float 6s ease-in-out infinite;
@@ -104,4 +119,8 @@ html {
 .animate-float-slow {
   animation: float-slow 10s ease-in-out infinite;
   animation-delay: 2s;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 12s ease-in-out infinite;
 }
