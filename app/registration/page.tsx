@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import Section from '../components/ui/Section';
 import SectionTitle from '../components/ui/SectionTitle';
+import { ATTENDANCE_DAYS, REGISTRATION_CATEGORIES, EVENT_DATES } from '../constants';
 
 export default function RegistrationPage() {
   const [formData, setFormData] = useState({
@@ -20,15 +21,8 @@ export default function RegistrationPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const days = ['Day 1 (Dec 8)', 'Day 2 (Dec 9)', 'Day 3 (Dec 10)', 'Day 4 (Dec 11)', 'Day 5 (Dec 12)'];
-  const categories = [
-    'Participant',
-    'Speaker/Panelist',
-    'Exhibitor',
-    'Media',
-    'Volunteer',
-    'Support Staff',
-  ];
+  const days = ATTENDANCE_DAYS;
+  const categories = REGISTRATION_CATEGORIES;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;

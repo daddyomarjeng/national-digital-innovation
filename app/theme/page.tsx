@@ -1,10 +1,11 @@
 import Section from '../components/ui/Section';
 import SectionTitle from '../components/ui/SectionTitle';
 import type { Metadata } from 'next';
+import { EVENT_THEME } from '../constants';
 
 export const metadata: Metadata = {
   title: 'Theme & Objectives | National Digital Innovation Week – The Gambia',
-  description: 'Accelerating Digital Transformation and Strengthening Connectivity for Inclusive Growth in The Gambia.',
+  description: EVENT_THEME.tagline,
 };
 
 export default function ThemePage() {
