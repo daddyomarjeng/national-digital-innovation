@@ -72,20 +72,22 @@ export const SOCIAL_MEDIA = {
 
 // Organizing Partners
 export const ORGANIZERS = [
+    {
+    name: 'Ministry of Communication and Digital Economy',
+    shortName: 'MoCDE',
+     role: 'Main Organizing Body',
+     isPrimary: true,
+    description: 'The Ministry of Communication and Digital Economy spearheads The Gambia\'s digital transformation agenda, developing policies and strategies to accelerate ICT adoption across all sectors.',
+  },
   {
     name: 'Gambia Information and Communication Technology Agency',
     shortName: 'GICTA',
-    role: 'Main Organizing Body',
+    role: 'Lead Organizer',
     description: 'GICTA is the principal agency responsible for regulating, promoting, and developing the ICT sector in The Gambia. As the main organizing body, GICTA coordinates all aspects of the National Digital Innovation Week, bringing together stakeholders to accelerate digital transformation.',
     website: 'https://gicta.gov.gm',
-    isPrimary: true,
+    
   },
-  {
-    name: 'Ministry of Communication and Digital Economy',
-    shortName: 'MoCDE',
-    role: 'Lead Organizer',
-    description: 'The Ministry of Communication and Digital Economy spearheads The Gambia\'s digital transformation agenda, developing policies and strategies to accelerate ICT adoption across all sectors.',
-  },
+
   {
     name: 'WARDIP Gambia',
     shortName: 'WARDIP',
@@ -102,8 +104,6 @@ export const ORGANIZERS = [
 
 // Partner Logos (Placeholder names)
 export const PARTNERS = [
-  'Ministry of Communication and Digital Economy',
-  'Gambia Information and Communication Technology Agency (GICTA)',
   'WARDIP Gambia',
   'The World Bank',
   'African Development Bank',

@@ -7,8 +7,6 @@ export default function Partners() {
   // Helper function to get partner image path
   const getPartnerImage = (partner: string): string => {
     const imageMap: { [key: string]: string } = {
-      'Gambia Information and Communication Technology Agency (GICTA)': '/gicta.jpg',
-      'Ministry of Communication and Digital Economy': '/mocde.jpg',
       'WARDIP Gambia': '/wardip.jpg',
       'The World Bank': '/wb.jpg',
       'African Development Bank': '/adb.jpg',

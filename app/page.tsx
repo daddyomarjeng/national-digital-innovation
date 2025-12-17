@@ -9,6 +9,7 @@ import PresidentialMessage from './components/home/PresidentialMessage';
 import Speakers from './components/home/Speakers';
 import WhoShouldAttend from './components/home/WhoShouldAttend';
 import LatestUpdates from './components/home/LatestUpdates';
+import Organizers from './components/home/Organizers';
 import Partners from './components/home/Partners';
 import CallToAction from './components/home/CallToAction';
 import Section from './components/ui/Section';
@@ -36,6 +37,7 @@ export default function HomePage() {
       <Speakers />
       <WhoShouldAttend />
       <LatestUpdates />
+      <Organizers />
       <Partners />
       <CallToAction />
     </>
