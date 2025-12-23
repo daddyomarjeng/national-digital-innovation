@@ -28,18 +28,23 @@ export default function Navbar() {
     { label: 'Contact', href: '/contact' },
   ];
 
+  const brandFlag = (
+    <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden shadow-md shadow-blue-100">
+      <span className="absolute inset-0 bg-gradient-to-b from-red-500 via-blue-700 to-green-500 opacity-90" aria-hidden="true" />
+      <span className="relative text-white font-black text-sm tracking-wider">GMB</span>
+    </span>
+  );
+
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-blue-100 shadow-[0_10px_40px_-24px_rgba(15,23,42,0.45)]" role="navigation" aria-label="Main navigation">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group" aria-label="National Digital Innovation Week home">
-            <div className="w-12 h-12 bg-linear-to-br from-blue-800 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-base">logo</span>
-            </div>
-            <div className="hidden lg:block">
-              <div className="text-sm font-bold text-blue-900">National Digital</div>
-              <div className="text-xs text-gray-600">Innovation Week</div>
+          <Link href="/" className="flex items-center gap-3 group" aria-label="National Digital Innovation Week home">
+            {brandFlag}
+            <div className="hidden lg:flex flex-col leading-tight">
+              <span className="text-[11px] uppercase tracking-[0.18em] text-blue-800 font-semibold">Digital Innovation Week</span>
+              <span className="text-sm font-bold text-slate-800 group-hover:text-blue-900 transition-colors">The Gambia · 2025</span>
             </div>
           </Link>
 
@@ -48,7 +53,7 @@ export default function Navbar() {
             {menuItems.map((item) => {
               const isActive = pathname === item.href;
               const isSubActive = item.subItems?.some(sub => pathname === sub.href);
-              
+
               if (item.hasDropdown) {
                 return (
                   <div 
@@ -58,17 +63,17 @@ export default function Navbar() {
                     onMouseLeave={() => setIsProgrammeOpen(false)}
                   >
                     <button
-                      className={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center ${
+                      className={`px-4 py-2 text-[15px] font-semibold rounded-lg transition-all flex items-center gap-1 border border-transparent ${
                         isActive || isSubActive
-                          ? 'bg-blue-800 text-white'
-                          : 'text-gray-700 hover:text-blue-800 hover:bg-blue-50'
+                          ? 'bg-blue-900 text-white shadow-md shadow-blue-200 border-blue-900'
+                          : 'text-slate-700 hover:text-blue-900 hover:bg-blue-50/80 hover:border-blue-100'
                       }`}
                     >
                       {item.label}
-                      <svg 
-                        className="w-4 h-4 ml-1" 
-                        fill="none" 
-                        stroke="currentColor" 
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -76,18 +81,18 @@ export default function Navbar() {
                     </button>
                     
                     {/* Dropdown Menu */}
-                    <div className="absolute left-0 mt-1 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                      <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                    <div className="absolute left-0 mt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-2xl shadow-blue-100 border border-blue-100 py-2">
                         {item.subItems?.map((subItem) => {
                           const isSubItemActive = pathname === subItem.href;
                           return (
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className={`block px-4 py-2 text-sm transition-colors ${
+                              className={`block px-4 py-2.5 text-sm transition-colors ${
                                 isSubItemActive
-                                  ? 'bg-blue-50 text-blue-800 font-semibold'
-                                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-800'
+                                  ? 'bg-blue-50 text-blue-900 font-semibold'
+                                  : 'text-slate-700 hover:bg-blue-50 hover:text-blue-900'
                               }`}
                             >
                               {subItem.label}
@@ -104,10 +109,10 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`px-4 py-2 text-[15px] font-semibold rounded-lg transition-colors border border-transparent ${
                     isActive
-                      ? 'bg-blue-800 text-white'
-                      : 'text-gray-700 hover:text-blue-800 hover:bg-blue-50'
+                      ? 'bg-blue-900 text-white shadow-md shadow-blue-200 border-blue-900'
+                      : 'text-slate-700 hover:text-blue-900 hover:bg-blue-50/80 hover:border-blue-100'
                   }`}
                 >
                   {item.label}
@@ -120,7 +125,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-3">
             <Link
               href="/contact"
-              className="inline-flex items-center px-5 py-2.5 border-2 border-blue-800 text-blue-800 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center px-5 py-2.5 border border-blue-800/60 text-blue-900 font-semibold rounded-lg hover:bg-blue-50/60 transition-colors shadow-sm"
             >
               {/* <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -129,7 +134,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/registration"
-              className="inline-flex items-center px-6 py-2.5 bg-blue-800 text-white font-semibold rounded-lg hover:bg-blue-900 transition-colors"
+              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-blue-900 via-blue-700 to-emerald-600 text-white font-semibold rounded-lg shadow-lg shadow-blue-200/60 hover:shadow-xl hover:translate-y-[-1px] transition-all"
             >
               Register Now
             </Link>
@@ -161,9 +166,9 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+          {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-100">
+          <div className="lg:hidden py-4 border-t border-blue-50 bg-white/95 backdrop-blur-md">
             <div className="flex flex-col space-y-2">
               {menuItems.map((item) => {
                 const isActive = pathname === item.href;
@@ -174,17 +179,17 @@ export default function Navbar() {
                     <div key={item.href}>
                       <button
                         onClick={() => setIsProgrammeOpen(!isProgrammeOpen)}
-                        className={`w-full px-4 py-2 text-base font-medium rounded-md transition-colors flex items-center justify-between ${
+                        className={`w-full px-4 py-2 text-base font-semibold rounded-lg transition-colors flex items-center justify-between ${
                           isActive || isSubActive
-                            ? 'bg-blue-800 text-white'
-                            : 'text-gray-700 hover:text-blue-800 hover:bg-blue-50'
+                            ? 'bg-blue-900 text-white shadow-md shadow-blue-200'
+                            : 'text-slate-700 hover:text-blue-900 hover:bg-blue-50'
                         }`}
                       >
                         {item.label}
-                        <svg 
+                        <svg
                           className={`w-4 h-4 transition-transform ${isProgrammeOpen ? 'rotate-180' : ''}`}
-                          fill="none" 
-                          stroke="currentColor" 
+                          fill="none"
+                          stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -200,10 +205,10 @@ export default function Navbar() {
                               <Link
                                 key={subItem.href}
                                 href={subItem.href}
-                                className={`block px-4 py-2 text-sm rounded-md transition-colors ${
+                                className={`block px-4 py-2 text-sm rounded-lg transition-colors ${
                                   isSubItemActive
-                                    ? 'bg-blue-100 text-blue-800 font-semibold'
-                                    : 'text-gray-600 hover:bg-blue-50 hover:text-blue-800'
+                                    ? 'bg-blue-100 text-blue-900 font-semibold'
+                                    : 'text-slate-600 hover:bg-blue-50 hover:text-blue-900'
                                 }`}
                                 onClick={() => setIsMenuOpen(false)}
                               >
@@ -219,17 +224,17 @@ export default function Navbar() {
                 
                 return (
                   <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`px-4 py-2 text-base font-medium rounded-md transition-colors ${
-                      isActive
-                        ? 'bg-blue-800 text-white'
-                        : 'text-gray-700 hover:text-blue-800 hover:bg-blue-50'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
+                  key={item.href}
+                  href={item.href}
+                  className={`px-4 py-2 text-base font-semibold rounded-lg transition-colors ${
+                    isActive
+                      ? 'bg-blue-900 text-white shadow-md shadow-blue-200'
+                      : 'text-slate-700 hover:text-blue-900 hover:bg-blue-50'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
                 );
               })}
               
@@ -237,14 +242,14 @@ export default function Navbar() {
               <div className="pt-4 space-y-2">
                 <Link
                   href="/contact"
-                  className="mx-4 px-6 py-3 border-2 border-blue-800 text-blue-800 font-semibold rounded-lg hover:bg-blue-50 transition-colors text-center block"
+                  className="mx-4 px-6 py-3 border border-blue-800/60 text-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition-colors text-center block shadow-sm"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Become a Sponsor
                 </Link>
                 <Link
                   href="/registration"
-                  className="mx-4 px-6 py-3 bg-blue-800 text-white font-semibold rounded-lg hover:bg-blue-900 transition-colors text-center block"
+                  className="mx-4 px-6 py-3 bg-gradient-to-r from-blue-900 via-blue-700 to-emerald-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all text-center block"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Register Now
