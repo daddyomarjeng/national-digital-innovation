@@ -4,7 +4,27 @@ import { EVENT_DATES, EVENT_THEME, VENUE, EVENT_STATS } from '@/app/constants';
 
 export default function Hero() {
   return (
-    <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
+    <section className="relative text-white overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0">
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/dg.jpg"
+        >
+          <source src="/vid3.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-slate-950/70" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-slate-900/60 to-emerald-900/40" />
+      <div className="absolute inset-0 opacity-30 mix-blend-screen" style={{
+        backgroundImage: 'radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 55%), radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.35), transparent 55%)',
+      }} />
       {/* Floating Logos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* GICTA Logo - Top Left */}
@@ -94,27 +114,37 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div className="py-20 md:py-28 lg:py-32">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="py-24 md:py-32 lg:py-36">
+          <div className="max-w-5xl mx-auto text-center">
             {/* Event Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-blue-700/50 rounded-full mb-6 backdrop-blur-sm">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-              <span className="text-sm font-medium">{EVENT_DATES.fullDisplay}</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>{EVENT_DATES.fullDisplay}</span>
+              <span className="text-white/60">|</span>
+              <span className="text-white/80">Banjul • The Gambia</span>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
               National Digital Innovation Week
-              <span className="block text-blue-200 mt-2">The Gambia</span>
+              <span className="block text-emerald-200 mt-3 text-3xl md:text-4xl lg:text-5xl">
+                Powering The Gambia&apos;s Digital Future
+              </span>
             </h1>
 
             {/* Theme */}
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg md:text-2xl text-slate-200 mb-10 leading-relaxed max-w-3xl mx-auto">
               {EVENT_THEME.tagline}
             </p>
 
             {/* Venue */}
-            <div className="flex items-center justify-center mb-4 text-blue-100">
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-slate-200">
+              <div className="flex items-center">
+                <svg className="w-5 h-5 mr-2 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-lg font-medium">{EVENT_DATES.fullDisplay}</span>
+              </div>
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -124,20 +154,20 @@ export default function Hero() {
 
             {/* Organized by GICTA */}
             <div className="mb-10">
-              <p className="text-blue-200 text-sm mb-2">Organized by</p>
+              <p className="text-emerald-200 text-sm uppercase tracking-[0.3em] mb-2">Organized by</p>
               <p className="text-white text-lg font-semibold">
                 {/* Gambia Information and Communication Technology Agency (GICTA) */}
-                Ministry of Communications and Digital Economy(MOCDE)
+                Ministry of Communications and Digital Economy (MoCDE)
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Button
                 href="/registration"
                 variant="ghost"
                 size="lg"
-                className="w-full sm:w-auto bg-white text-blue-900 hover:bg-blue-50 font-semibold"
+                className="w-full sm:w-auto bg-emerald-400 text-slate-900 hover:bg-emerald-300 font-semibold shadow-lg shadow-emerald-500/30"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -148,13 +178,20 @@ export default function Hero() {
                 href="/programme"
                 variant="ghost"
                 size="lg"
-                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold"
+                className="w-full sm:w-auto border-2 border-white/70 text-white hover:bg-white/10 font-semibold"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 View Programme
               </Button>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] text-white/70">
+              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur">Innovation</span>
+              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur">Policy</span>
+              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur">Startups</span>
+              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur">Talent</span>
             </div>
           </div>
         </div>
@@ -167,7 +204,7 @@ export default function Hero() {
             { label: EVENT_STATS.sessions, icon: '💡' },
             { label: EVENT_STATS.participants, icon: '👥' },
           ].map((stat, idx) => (
-            <div key={idx} className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-lg">
+            <div key={idx} className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg shadow-slate-900/40">
               <div className="text-3xl mb-2">{stat.icon}</div>
               <div className="text-lg font-semibold">{stat.label}</div>
             </div>
