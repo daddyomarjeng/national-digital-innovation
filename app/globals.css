@@ -91,6 +91,17 @@ html {
   }
 }
 
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Apply animations */
 .animate-float {
   animation: float 6s ease-in-out infinite;
@@ -104,4 +115,8 @@ html {
 .animate-float-slow {
   animation: float-slow 10s ease-in-out infinite;
   animation-delay: 2s;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
 }
